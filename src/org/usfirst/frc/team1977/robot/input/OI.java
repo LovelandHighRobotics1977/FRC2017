@@ -7,6 +7,28 @@ import edu.wpi.first.wpilibj.buttons.Button;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
+	private static OI instance;
+	// XBox Controller references
+	private XBoxController driveJoystick;
+	//Other joystick will be put here as well
+	
+	private OI() {
+		driveJoystick = new XBoxController(0);
+		//Set other joystick here once we know what it is used 
+		//manipulatorJoystick = new XBoxController(1);
+	}
+	
+	public static OI getInstance() {
+		if (instance == null) {
+			instance = new OI();
+		}
+		return instance;
+	}
+	
+	public XBoxController getDriveJoystick() {
+		return driveJoystick;
+	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
