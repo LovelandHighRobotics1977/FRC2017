@@ -13,7 +13,7 @@ public class OI {
 	private XBoxController driveJoystick;
 	//Other joystick will be put here as well
 	
-	private OI() {
+	public OI() {
 		driveJoystick = new XBoxController(0);
 		//Set other joystick here once we know what it is used 
 		//manipulatorJoystick = new XBoxController(1);
