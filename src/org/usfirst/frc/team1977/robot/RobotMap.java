@@ -17,10 +17,19 @@ public class RobotMap {
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
 	
+	public static final int DRIVE_FRONT_LEFT_VICTOR = 0;
+	public static final int DRIVE_FRONT_RIGHT_VICTOR = 1;
+	public static final int DRIVE_BACK_LEFT_VICTOR = 2;
+	public static final int DRIVE_BACK_RIGHT_VICTOR = 3;
+	
+	/*
 	public static final int DRIVE_FRONT_LEFT_TALON = 0;
 	public static final int DRIVE_FRONT_RIGHT_TALON = 1;
 	public static final int DRIVE_BACK_LEFT_TALON = 2;
 	public static final int DRIVE_BACK_RIGHT_TALON = 3;
+	 */
+	
+	public static final int SHOOT1MOTOR = 4;
 	
 	public class XBoxMappings {
 
