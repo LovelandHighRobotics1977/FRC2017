@@ -12,7 +12,7 @@ public class UserDrive extends CommandBase {
 	
 	protected void execute() {
 		double hPower = oi.getDriveJoystick().getLeftX();
-		double vPower = -oi.getDriveJoystick().getLeftY();
+		double vPower = oi.getDriveJoystick().getLeftY();
 		double turn = (oi.getDriveJoystick().getLeftTriggerAxis() * 0.7)
 				- (oi.getDriveJoystick().getRightTriggerAxis() * 0.7);
 

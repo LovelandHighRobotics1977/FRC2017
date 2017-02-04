@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import org.usfirst.frc.team1977.robot.commands.CommandBase;
 import org.usfirst.frc.team1977.robot.commands.ExampleCommand;
 import org.usfirst.frc.team1977.robot.input.OI;
 import org.usfirst.frc.team1977.robot.subsystems.ExampleSubsystem;
@@ -33,6 +34,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		CommandBase.init();
 		oi = new OI();
 		chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
