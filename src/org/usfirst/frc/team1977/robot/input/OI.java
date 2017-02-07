@@ -1,6 +1,10 @@
 package org.usfirst.frc.team1977.robot.input;
 
+import org.usfirst.frc.team1977.robot.commands.drive.SpeedToggle;
+import org.usfirst.frc.team1977.robot.commands.drive.TurnTime;
+
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -15,8 +19,19 @@ public class OI {
 	
 	public OI() {
 		driveJoystick = new XBoxController(0);
-		//Set other joystick here once we know what it is used 
+		//Set other controller here once we know if it is used 
 		//manipulatorJoystick = new XBoxController(1);
+	}
+	
+	public void init() {
+		//Put things here when you want buttons to trigger
+		//Speed toggle
+		driveJoystick.leftThumbWhenPressed(new SpeedToggle());
+		//Turn functions for shoulders
+		driveJoystick.rightWhileHeld(new TurnTime(100,-1));
+		driveJoystick.leftWhileHeld(new TurnTime(100,1));
+		//180 turn function
+		driveJoystick.rightThumbWhenPressed(new TurnTime(500,1)); //THIS NEEDS TO BE Adjusted
 	}
 	
 	public static OI getInstance() {

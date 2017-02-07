@@ -16,6 +16,9 @@ public class Drive extends Subsystem {
 	private static Drive instance;
 	//used for getInstance
 	
+	private boolean speedToggle = false;
+	//for speedToggle function to halve speed
+	
 	private Victor frontLeft;
 	private Victor frontRight;
 	private Victor backLeft;
@@ -35,6 +38,7 @@ public class Drive extends Subsystem {
 	
 	private double voltageCoefficient = 1;
 	private double turnPowerCoefficient = 1;
+
 	
 	public Drive(){
 		//Define motor controllers for drive train on test chassis
@@ -44,7 +48,7 @@ public class Drive extends Subsystem {
     	backRight = new Victor(RobotMap.DRIVE_BACK_RIGHT_VICTOR);
     	
     	/* Define motor controllers for drive train on main chassis
-    	 * Need this because FIRST only has Victor plugins
+    	 * Need this because FIRST only has Victor plugins and they have no idea what its like trying to find and install plugins from third party sites that look fairly sketchy and don't really install right and why can't just add the commonly used motor controllers that they have in their FIRST Choice Program
     	 * http://www.ctr-electronics.com/downloads/pdf/CTRE%20Toolsuite%20Installation%20Guide.pdf
     	frontLeft = new CANTalon(RobotMap.DRIVE_FRONT_LEFT_TALON);
     	frontRight = new CANTalon(RobotMap.DRIVE_FRONT_RIGHT_TALON);
@@ -84,5 +88,18 @@ public class Drive extends Subsystem {
 	
 	public void stop() {
     	drive(0, 0, 0);
+    }
+	
+	public boolean isSpeedToggle() {
+    	return speedToggle;
+    }
+    
+    public void setSpeedToggle(boolean speedToggle) {
+    	this.speedToggle = speedToggle;
+    	if (speedToggle) {
+    		voltageCoefficient = 0.5;
+    	} else {
+    		voltageCoefficient = 1.0;
+    	}
     }
 }

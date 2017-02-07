@@ -5,6 +5,7 @@ import org.usfirst.frc.team1977.robot.commands.CommandBase;
 import edu.wpi.first.wpilibj.Joystick;
 
 public class UserDrive extends CommandBase {
+	//Time for 180 degree turn
 	
 	public UserDrive() {
 		requires(drive);
@@ -15,7 +16,7 @@ public class UserDrive extends CommandBase {
 		double vPower = oi.getDriveJoystick().getLeftY();
 		double turn = (oi.getDriveJoystick().getLeftTriggerAxis() * 0.7)
 				- (oi.getDriveJoystick().getRightTriggerAxis() * 0.7);
-
+		
 		if (Math.abs(hPower) < .2) {
 			hPower = 0;
 		}
@@ -27,9 +28,8 @@ public class UserDrive extends CommandBase {
 		if (Math.abs(turn) < .2) {
 			turn = 0;
 		}
-
 		drive.drive(-hPower, -vPower, -turn);
-
+		
 	}
 	
 	// Make this return true when this Command no longer needs to run execute()
