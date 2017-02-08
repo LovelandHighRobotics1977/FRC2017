@@ -36,6 +36,7 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		CommandBase.init();
 		oi = new OI();
+		oi.init();
 		chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);

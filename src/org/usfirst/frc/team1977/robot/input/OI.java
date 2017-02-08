@@ -28,12 +28,12 @@ public class OI {
 	public void init() {
 		//Put things here when you want buttons to trigger
 		//Speed toggle
-		driveJoystick.leftThumbWhenPressed(new SpeedToggle());
+		driveJoystick.leftWhenPressed(new SpeedToggle());
 		//Turn functions for shoulders
-		driveJoystick.rightWhileHeld(new TurnTime(100,-1));
-		driveJoystick.leftWhileHeld(new TurnTime(100,1));
+		//driveJoystick.rightWhileHeld(new TurnTime(100,-1));
+		//driveJoystick.leftWhileHeld(new TurnTime(100,1));
 		//180 turn function
-		driveJoystick.rightThumbWhenPressed(new TurnTime(500,1)); //THIS NEEDS TO BE Adjusted
+		driveJoystick.rightWhenPressed(new TurnTime(500,1)); //THIS NEEDS TO BE Adjusted
 	}
 	
 	public static OI getInstance() {
