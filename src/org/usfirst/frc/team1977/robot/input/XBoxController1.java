@@ -22,7 +22,7 @@ import edu.wpi.first.wpilibj.command.Command;
  * @author Ali Persings
  * @author Evan Stewart
  */
-public class XBoxController extends Joystick {
+public class XBoxController1 extends Joystick {
 
 	// Instance values
 	private int port;
@@ -47,7 +47,7 @@ public class XBoxController extends Joystick {
 	 *            The input port this controller occupies on the Driver Station
 	 *            (1 <= x <= 4)
 	 */
-	public XBoxController(int port) {
+	public XBoxController1(int port) {
 		super(port);
 		this.port = port;
 		initInputSources();

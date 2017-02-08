@@ -6,6 +6,8 @@ import org.usfirst.frc.team1977.robot.commands.drive.TurnTime;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import edu.wpi.first.wpilibj.XboxController;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -14,11 +16,11 @@ public class OI {
 	
 	private static OI instance;
 	// XBox Controller references
-	private XBoxController driveJoystick;
+	private XBoxController1 driveJoystick;
 	//Other joystick will be put here as well
 	
 	public OI() {
-		driveJoystick = new XBoxController(0);
+		driveJoystick = new XBoxController1(0);
 		//Set other controller here once we know if it is used 
 		//manipulatorJoystick = new XBoxController(1);
 	}
@@ -41,7 +43,7 @@ public class OI {
 		return instance;
 	}
 	
-	public XBoxController getDriveJoystick() {
+	public XBoxController1 getDriveJoystick() {
 		return driveJoystick;
 	}
 	//// CREATING BUTTONS

@@ -19,6 +19,8 @@ public class CenterPosition extends CommandGroup {
 		addSequential( new DriveStop() );
 	}
 	
+	
+	
 	//Another way of autonomous working
 	/*protected void initialize() {
 		//How long this will run for
