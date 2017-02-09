@@ -6,19 +6,17 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public abstract class ShootStuff extends CommandBase {
 
+	int Power;
+	
 	public ShootStuff(){
 		requires(shooter);
 	}
 	
 	protected void execute() {
-		boolean Power = oi.getDriveJoystick().getRightThumbButtonValue();
-		
-		if(Power){
-			shooter.ShootPower(1);
-		} else {
-			shooter.ShootPower(0);
-		}
-		
+		if(oi.getDriveJoystick().getLeftThumbButtonValue()) Power = -1;
+		else if(oi.getDriveJoystick().getLeftShoulderValue()) Power = 1;
+
+		shooter.ShootPower(Power);		
 		
 	}
 	protected boolean isFinished() {

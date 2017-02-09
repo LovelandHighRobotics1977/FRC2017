@@ -2,20 +2,21 @@ package org.usfirst.frc.team1977.robot.commands.climber;
 
 import org.usfirst.frc.team1977.robot.commands.CommandBase;
 
+
+
 public class ClimbStuff extends CommandBase{
+	
+	int Power;
+	
 	public ClimbStuff(){
 		requires(climber);
 	}
 	
 	protected void execute() {
-		boolean Power = oi.getDriveJoystick().getLeftThumbButtonValue();
+		if(oi.getDriveJoystick().getRightThumbButtonValue()) Power = -1;
+		else if(oi.getDriveJoystick().getRightShoulderValue()) Power = 1;
 		
-		if(Power){
-			climber.ShootPower(1);
-		} else {
-			climber.ShootPower(0);
-		}
-		
+		climber.ShootPower(Power);
 		
 	}
 	protected boolean isFinished() {
