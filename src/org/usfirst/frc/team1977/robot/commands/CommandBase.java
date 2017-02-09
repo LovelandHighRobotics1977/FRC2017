@@ -25,7 +25,7 @@ public abstract class CommandBase extends Command {
 	public static void init() {
 		drive = Drive.getInstance();
 		shooter = Shooter.getInstance();
-		//climber = Climber.getInstance();*/
+		climber = Climber.getInstance();
 		oi = OI.getInstance();
 	}
 }

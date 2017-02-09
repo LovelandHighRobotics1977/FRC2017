@@ -30,6 +30,7 @@ public class RobotMap {
 	 */
 	
 	public static final int SHOOT1MOTOR = 4;
+	public static final int Climb1MOTOR = 5;
 	
 	public class XBoxMappings {
 
