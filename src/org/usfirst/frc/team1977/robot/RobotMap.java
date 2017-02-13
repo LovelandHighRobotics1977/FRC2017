@@ -29,6 +29,8 @@ public class RobotMap {
 	public static final int DRIVE_BACK_RIGHT_TALON = 3;
 	 */
 	
+	public static final int FRONT_ULTRASONIC = 0;
+	
 	public static final int SHOOT1MOTOR = 4;
 	public static final int Climb1MOTOR = 5;
 	

@@ -6,6 +6,7 @@ import org.usfirst.frc.team1977.robot.commands.drive.DriveStop;
 import org.usfirst.frc.team1977.robot.commands.drive.DriveTime;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc.team1977.robot.commands.drive.PidController;
 
 public class CenterPosition extends CommandGroup {
 	
