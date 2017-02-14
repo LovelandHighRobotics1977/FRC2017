@@ -2,8 +2,6 @@ package org.usfirst.frc.team1977.robot.commands.climber;
 
 import org.usfirst.frc.team1977.robot.commands.CommandBase;
 
-
-
 public class ClimbStuff extends CommandBase{
 	
 	int Power;

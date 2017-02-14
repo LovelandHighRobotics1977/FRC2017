@@ -5,8 +5,15 @@ import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDOutput;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
+import org.usfirst.frc.team1977.robot.commands.CommandBase;
 
-public class PidController {
+
+public class PidController extends CommandBase{
+	
+	public PidController() {
+		requires(drive);
+	}
+	
 	// distance in inches the robot wants to stay from an object
 	private static final double kHoldDistance = 10.0;
 
@@ -25,8 +32,8 @@ public class PidController {
 	// derivative speed constant
 	private static final double kD = 1.5;
 
-	private static final int kLeftMotorPort = 0;
-	private static final int kRightMotorPort = 1;
+	//private static final int kLeftMotorPort = 0;
+	//private static final int kRightMotorPort = 1;
 	private static final int kUltrasonicPort = 0;
 
 	private AnalogInput ultrasonic = new AnalogInput(kUltrasonicPort);
@@ -43,15 +50,33 @@ public class PidController {
 	private static class MyPidOutput implements PIDOutput {
 		@Override
 		public void pidWrite(double output) {
-			myRobot.drive(output, 0);
+			drive.drive(output, 0,0);
 		}
 	}
 
-	/*public static Command startPID() {
-		pidController.enable();
+	public class startPID extends CommandBase {
+		public startPID() {
+			requires(drive);
+		}
 		
+		protected void initialize() {
+			pidController.enable();
+	    }
+		
+		@Override
+		protected boolean isFinished() {
+			// TODO Auto-generated method stub
+			return false;
+		}
 	}
 	public void stopPID() {
 		pidController.disable();
-	}*/
+
+	}
+	
+	@Override
+	protected boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

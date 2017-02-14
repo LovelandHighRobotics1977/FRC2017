@@ -8,12 +8,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc.team1977.robot.commands.drive.PidController;
 
+
 public class CenterPosition extends CommandGroup {
 	
 	public CenterPosition() {
 		//Need to adjust time and speed
 		//Currently drives at half speed for 1 second
-		addSequential( new DriveTime( 0, 0.5, 1000) );
+		//addSequential( new DriveTime( 0, 0.5, 1000) );
+		addSequential( new startPID());
 	}
 	
 	protected void end() {
