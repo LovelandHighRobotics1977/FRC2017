@@ -6,12 +6,15 @@ import org.usfirst.frc.team1977.robot.commands.drive.DriveStop;
 import org.usfirst.frc.team1977.robot.commands.drive.DriveTime;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.StartCommand;
+
 import org.usfirst.frc.team1977.robot.commands.drive.PidController;
 
 
 public class CenterPosition extends CommandGroup {
 	
 	public CenterPosition() {
+		
 		//Need to adjust time and speed
 		//Currently drives at half speed for 1 second
 		//addSequential( new DriveTime( 0, 0.5, 1000) );

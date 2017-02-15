@@ -54,24 +54,12 @@ public class PidController extends CommandBase{
 		}
 	}
 
-	public class startPID extends CommandBase {
-		public startPID() {
-			requires(drive);
-		}
+	public void startPID() {
+		pidController.enable();
 		
-		protected void initialize() {
-			pidController.enable();
-	    }
-		
-		@Override
-		protected boolean isFinished() {
-			// TODO Auto-generated method stub
-			return false;
-		}
 	}
 	public void stopPID() {
 		pidController.disable();
-
 	}
 	
 	@Override
