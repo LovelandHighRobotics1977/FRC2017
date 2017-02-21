@@ -11,10 +11,11 @@ public class ClimbStuff extends CommandBase{
 	}
 	
 	protected void execute() {
-		if(oi.getDriveJoystick().getRightThumbButtonValue()) Power = -1;
+		//Commented out for testing
+		/*if(oi.getDriveJoystick().getRightThumbButtonValue()) Power = -1;
 		else if(oi.getDriveJoystick().getRightShoulderValue()) Power = 1;
 		
-		climber.ShootPower(Power);
+		climber.ShootPower(Power);*/
 		
 	}
 	protected boolean isFinished() {

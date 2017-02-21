@@ -13,10 +13,11 @@ public abstract class ShootStuff extends CommandBase {
 	}
 	
 	protected void execute() {
-		if(oi.getDriveJoystick().getLeftThumbButtonValue()) Power = -1;
+		//Commenting out for now
+		/*if(oi.getDriveJoystick().getLeftThumbButtonValue()) Power = -1;
 		else if(oi.getDriveJoystick().getLeftShoulderValue()) Power = 1;
 
-		shooter.ShootPower(Power);		
+		shooter.ShootPower(Power);	*/	
 		
 	}
 	protected boolean isFinished() {
