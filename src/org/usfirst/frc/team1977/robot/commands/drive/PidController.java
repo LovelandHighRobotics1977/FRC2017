@@ -36,8 +36,8 @@ public class PidController extends CommandBase{
 	//private static final int kRightMotorPort = 1;
 	private static final int kUltrasonicPort = 0;
 
-	private AnalogInput ultrasonic = new AnalogInput(kUltrasonicPort);
-	private PIDController pidController = new PIDController(kP, kI, kD, ultrasonic, new MyPidOutput());
+	private static AnalogInput ultrasonic = new AnalogInput(kUltrasonicPort);
+	private static PIDController pidController = new PIDController(kP, kI, kD, ultrasonic, new MyPidOutput());
 		
 	public void pidStart() {
 		// Set expected range to 0-24 inches; e.g. at 24 inches from object go
@@ -54,11 +54,11 @@ public class PidController extends CommandBase{
 		}
 	}
 
-	public void startPID() {
+	public static void startPID() {
 		pidController.enable();
 		
 	}
-	public void stopPID() {
+	public static void stopPID() {
 		pidController.disable();
 	}
 	

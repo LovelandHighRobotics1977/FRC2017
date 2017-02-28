@@ -18,7 +18,8 @@ public class CenterPosition extends CommandGroup {
 		//Need to adjust time and speed
 		//Currently drives at half speed for 1 second
 		//addSequential( new DriveTime( 0, 0.5, 1000) );
-		//addSequential( new startPID());
+		addSequential( new PidController());
+		PidController.startPID();
 	}
 	
 	protected void end() {
