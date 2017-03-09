@@ -32,10 +32,12 @@ public class DriveTime extends CommandBase {
     protected void initialize() {
         driveSpeed = vPowerMin;
         lastRamp = System.currentTimeMillis();
+        System.out.println("Git initulated BOI");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	System.out.println("Execute my dude");
         drive.drive(0, (driveSpeed / 12), 0);
         if (System.currentTimeMillis() <= halfTime) {
             if (System.currentTimeMillis() - lastRamp >= rampInterval) {
@@ -53,10 +55,13 @@ public class DriveTime extends CommandBase {
         } else if (driveSpeed < vPowerMin) {
             driveSpeed = vPowerMin;
         }
+        System.out.println("It's Wednesday my dude");
     }
 	
 	// Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
+    	System.out.println("Cur " + System.currentTimeMillis());
+    	System.out.println("End " + endTime);
         return (System.currentTimeMillis() >= endTime);
     }
 

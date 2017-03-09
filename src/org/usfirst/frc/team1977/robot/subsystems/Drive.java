@@ -21,16 +21,16 @@ public class Drive extends Subsystem {
 	private boolean speedToggle = false;
 	//for speedToggle function to halve speed
 	
-	/*private Victor frontLeft;
+	private Victor frontLeft;
 	private Victor frontRight;
 	private Victor backLeft;
-	private Victor backRight;*/
+	private Victor backRight;
 	
 	
-	private CANTalon frontLeft;
+	/*private CANTalon frontLeft;
 	private CANTalon frontRight;
 	private CANTalon backLeft;
-	private CANTalon backRight;
+	private CANTalon backRight;*/
 	
 	
 	private UserDrive userDrive;
@@ -44,18 +44,18 @@ public class Drive extends Subsystem {
 	
 	public Drive(){
 		//Define motor controllers for drive train on test chassis
-		/*frontLeft = new Victor(RobotMap.DRIVE_FRONT_LEFT_VICTOR);
+		frontLeft = new Victor(RobotMap.DRIVE_FRONT_LEFT_VICTOR);
     	frontRight = new Victor(RobotMap.DRIVE_FRONT_RIGHT_VICTOR);
     	backLeft = new Victor(RobotMap.DRIVE_BACK_LEFT_VICTOR);
-    	backRight = new Victor(RobotMap.DRIVE_BACK_RIGHT_VICTOR);*/
+    	backRight = new Victor(RobotMap.DRIVE_BACK_RIGHT_VICTOR);
     	
     	/* Define motor controllers for drive train on main chassis
     	 * Need this because FIRST only has Victor plugins and they have no idea what its like trying to find and install plugins from third party sites that look fairly sketchy and don't really install right and why can't just add the commonly used motor controllers that they have in their FIRST Choice Program
     	 * http://www.ctr-electronics.com/downloads/pdf/CTRE%20Toolsuite%20Installation%20Guide.pdf*/
-    	frontLeft = new CANTalon(RobotMap.DRIVE_FRONT_LEFT_TALON);
+    /*	frontLeft = new CANTalon(RobotMap.DRIVE_FRONT_LEFT_TALON);
     	frontRight = new CANTalon(RobotMap.DRIVE_FRONT_RIGHT_TALON);
     	backLeft = new CANTalon(RobotMap.DRIVE_BACK_LEFT_TALON);
-    	backRight = new CANTalon(RobotMap.DRIVE_BACK_RIGHT_TALON);
+    	backRight = new CANTalon(RobotMap.DRIVE_BACK_RIGHT_TALON);*/
     	
 	}
 	

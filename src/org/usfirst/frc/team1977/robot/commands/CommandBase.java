@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1977.robot.commands;
 
+import org.usfirst.frc.team1977.robot.commands.auto.LeftPosition;
 import org.usfirst.frc.team1977.robot.input.OI;
 import org.usfirst.frc.team1977.robot.subsystems.Climber;
 import org.usfirst.frc.team1977.robot.subsystems.Drive;
@@ -15,6 +16,7 @@ public abstract class CommandBase extends Command {
 	protected static Drive drive;
 	protected static Shooter shooter;
 	protected static Climber climber;
+	protected static LeftPosition auto;
 	
 	/**
 	 * Initialize the CommandBase, in doing so accessing and initializing every
@@ -27,5 +29,8 @@ public abstract class CommandBase extends Command {
 		shooter = Shooter.getInstance();
 		climber = Climber.getInstance();
 		oi = OI.getInstance();
+		auto = LeftPosition.getInstance();
+		
+		
 	}
 }

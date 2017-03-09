@@ -12,10 +12,11 @@ public class RightPosition extends CommandGroup{
 
 	public RightPosition(){
 		//Need to adjust driving and turning times
-		addSequential( new DriveTime( 0, 0.5, 1000 ) );
-		addSequential( new TurnTime( 1000 , 1) );
-		addSequential( new PidController());
-		PidController.startPID();
+		addSequential( new DriveTime( 0, 1, 3240 ) );
+		addSequential( new TurnTime( 300 , 1) );
+		addSequential( new DriveTime( 0, 0.5, 1350) );
+		//addSequential( new PidController());
+		//+PidController.startPID();
 	}
 	
 	protected void end() {
